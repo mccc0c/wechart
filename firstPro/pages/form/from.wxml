@@ -1,0 +1,58 @@
+<!--pages/form/from.wxml-->
+<view class='formWrapper'>
+  <form bindsubmit="formSubmit" bindreset="formReset" class="form">
+    <view class='li'>
+      <label>name</label>
+      <input name="name" type="text" />
+    </view>
+    <view class='li'>
+      <label>sex</label>
+      <radio-group name="gender" bindchange="radioChange">
+        <radio value="0" checked />女士
+        <radio value="1" />先生
+      </radio-group>
+    </view>
+    <view class='li'>
+      <label>mobile</label>
+      <input name="mobile" type="number" maxlength="11" />
+    </view>
+    <button formType="submit">提交</button>
+  </form>
+  <loading hidden="{{submitHidden}}">
+    正在提交...
+  </loading> 
+  <view hidden="{{mapHideFlag?true:false}}">
+    <map id="map4select" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" scale="{{scale}}" style="width:100%;height:{{map_height}}px" bindregionchange="regionchange" controls="{{controls}}">
+    </map>
+  </view>
+  <button bindtap='getLocation'>getLocation</button>  
+  <view class="datalist" hidden="{{getflagHidden ? true : false}}">
+    <view wx:for="{{getData}}">
+      <label>{{item.title}}</label>
+    </view>
+  </view>
+<view>
+  <dialog id='dialog' 
+      title='我是标题' 
+      content='恭喜你，学会了小程序组件' 
+      cancelText='知道了' 
+      confirm='谢谢你'
+      bind:cancelEvent="_cancelEvent"  
+      bind:confirmEvent="_confirmEvent">
+    </dialog>    
+    <button type="primary" bindtap="showDialog"> ClickMe! </button>
+</view>
+<view class="tabarea">
+  <view class="tabnav">
+    <view animation="{{animation}}" class="anibac"></view>
+    <view class="li {{currentIndex==0?'active':''}}" data-current="0" bindtap="swichNav">0</view>
+    <view class="li {{currentIndex==1?'active':''}}" data-current="1" bindtap="swichNav">1</view>
+    <view class="li {{currentIndex==2?'active':''}}" data-current="2" bindtap="swichNav">2</view>
+  </view>
+  <view class="tabcontent">
+    <view class="li {{currentIndex==0?'active':''}}">0</view>
+    <view class="li {{currentIndex==1?'active':''}}">1</view>
+    <view class="li {{currentIndex==2?'active':''}}">2</view>
+  </view>
+</view>
+</view>

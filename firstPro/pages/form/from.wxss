@@ -1,0 +1,7 @@
+/* pages/form/from.wxss */
+/*tab切换*/
+.tabarea .tabnav .active{color:green;}
+.tabarea .tabcontent .li{display:none;}
+.tabarea .tabcontent .active{display:block}
+/*end*/
+.anibac{width:15px;height:15px;background:blue;}

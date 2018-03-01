@@ -1,0 +1,14 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+.formWrapper{padding: 2%} 
+.formWrapper .li{margin-bottom: 10px;}
+.formWrapper .li label{width: 23%;line-height: 20px;float: left}
+.formWrapper .li input{border: 1px solid #ddd;width: 75%;}

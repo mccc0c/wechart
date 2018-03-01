@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "from表单",
+  "usingComponents": {
+    "dialog": "/components/dialog/dialog"
+  }
+}
